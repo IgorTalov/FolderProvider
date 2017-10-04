@@ -16,8 +16,6 @@ class FolderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       self.itemsArray = DataProvider.sharedInstance.getFolderListFromRest()
 
        tableView?.reloadData()
        print(self.itemsArray)
@@ -42,17 +40,14 @@ class FolderViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let item = self.itemsArray[indexPath.row] as! Item
+        let item = self.itemsArray[indexPath.row] 
         
         if item.children.count > 0 {
-            let childController = FolderViewController()
+            let childController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FolderViewController") as! FolderViewController
             childController.itemsArray = item.children
+            self.navigationController?.pushViewController(childController, animated: true)
         }
-        
-        
-        
-//        childController.
-        
+
     }
     
 }
