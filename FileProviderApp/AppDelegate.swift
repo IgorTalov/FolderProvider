@@ -13,36 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        do {
-            let file = Bundle.main.path(forResource: "Folders", ofType: "json")
-            let url = URL(fileURLWithPath: file!)
-            let data = try Data(contentsOf: url)
-            let json = try JSONSerialization.jsonObject(with: data, options: [])
-            
-            if let object = json as? [String: Any] {
-                print(object)
-            }
-            
-        } catch  {
-            print("Error")
-        }
 
-        var folders: NSArray!
 
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
-        
-        do {
-            folders = try FileManager.default.subpathsOfDirectory(atPath: path as String) as NSArray
-        } catch {
-            print("Error")
-        }
-
-        print("test")
-        
         return true
     }
 

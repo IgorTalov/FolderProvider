@@ -7,3 +7,41 @@
 //
 
 import Foundation
+
+enum Type {
+    case folder
+    case file
+}
+
+class Item: NSObject {
+    
+//    var isRoot: Bool = false
+//    var type: Type!
+    var type: String! = ""
+    var children: [Item]! = []
+    var path: String! = ""
+    var name: String! = ""
+    
+    init(_ dictinary: [String: AnyObject]) {
+        super.init()
+        
+        self.type = dictinary["type"] as! String
+        self.path = dictinary["path"] as! String
+        self.name = dictinary["name"] as! String
+        
+        if self.type == "folder" {
+            if (dictinary["children"] != nil) {
+                let childArray = dictinary["children"] as! NSArray
+                
+                for child in childArray {
+                    let item = Item(child as! [String : AnyObject])
+                    
+                    self.children.append(item)
+                }
+            }
+        }
+
+    }
+    
+    
+}
