@@ -28,5 +28,17 @@
                                      ]
                         }
                         ]
-           }
+           },
+           {"type": "folder",
+           "name": "Peoples",
+           "path": "/peoples",
+           "children": [
+                        {
+                        "type": "folder",
+                        "name": "Womans",
+                        "path": "/peoples/womans",
+                        "children": []}
+           
+           ]},
+           
 ]}

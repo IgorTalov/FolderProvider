@@ -17,10 +17,10 @@ class Item: NSObject {
     
 //    var isRoot: Bool = false
 //    var type: Type!
-    var type: String! = ""
-    var children: [Item]! = []
-    var path: String! = ""
-    var name: String! = ""
+    var type = ""
+    var children = [Item]()
+    var path = ""
+    var name = ""
     
     init(_ dictinary: [String: AnyObject]) {
         super.init()

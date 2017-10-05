@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994D3B1C1F86621500DE89A0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994D3B1B1F86621500DE89A0 /* Extensions.swift */; };
 		9961ECFB1F83B67900CC1E34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9961ECFA1F83B67900CC1E34 /* AppDelegate.swift */; };
 		9961ECFD1F83B67900CC1E34 /* FolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9961ECFC1F83B67900CC1E34 /* FolderViewController.swift */; };
 		9961ED001F83B67900CC1E34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9961ECFE1F83B67900CC1E34 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		994D3B1B1F86621500DE89A0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		9961ECF71F83B67900CC1E34 /* FileProviderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileProviderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9961ECFA1F83B67900CC1E34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9961ECFC1F83B67900CC1E34 /* FolderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderViewController.swift; sourceTree = "<group>"; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		994D3B1A1F8661E900DE89A0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				994D3B1B1F86621500DE89A0 /* Extensions.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		9961ECEE1F83B67900CC1E34 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				9961ECFA1F83B67900CC1E34 /* AppDelegate.swift */,
+				994D3B1A1F8661E900DE89A0 /* Extensions */,
 				99C6D2331F85407C008E37D6 /* View */,
 				99C6D2301F854059008E37D6 /* API */,
 				99C6D2311F854066008E37D6 /* Models */,
@@ -183,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9961ECFD1F83B67900CC1E34 /* FolderViewController.swift in Sources */,
+				994D3B1C1F86621500DE89A0 /* Extensions.swift in Sources */,
 				9961ED0F1F83F70400CC1E34 /* Item.swift in Sources */,
 				99C6D22E1F8521FE008E37D6 /* DataProvider.swift in Sources */,
 				9961ECFB1F83B67900CC1E34 /* AppDelegate.swift in Sources */,
@@ -311,12 +323,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WJ2494P78F;
 				INFOPLIST_FILE = FileProviderApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SealDev.FileProviderApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SealDev.FileProviderApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -325,12 +339,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WJ2494P78F;
 				INFOPLIST_FILE = FileProviderApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.SealDev.FileProviderApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.SealDev.FileProviderApps;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

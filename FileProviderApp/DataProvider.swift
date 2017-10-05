@@ -9,12 +9,12 @@
 import Foundation
 
 protocol DataProviderOutput: class {
-    
+    func getFolderListFromRest() -> [Item]!
+    func getFolderListFromLocalStorage(_ lstoragePath: String) -> [Item]!
 }
 
 protocol DataProviderInput: class {
-    func getFolderListFromRest() -> [Item]!
-    func getFolderListFromLocalStorage(_ lstoragePath: String) -> [Item]!
+    
 }
 
 class DataProvider {
@@ -24,7 +24,7 @@ class DataProvider {
     
     func getFolderListFromRest() -> [Item]! {
         
-        var tempArray: [Item]! = []
+        var tempArray = [Item]()
         
         do {
             let file = Bundle.main.path(forResource: "Folders", ofType: "json")
@@ -50,8 +50,8 @@ class DataProvider {
     
     func getFolderListFromLocalStorage(_ storagePath: String) -> [Item]! {
         
-        var folders: [String]! = []
-        var array: [Item]! = []
+        var folders = [String]()
+        var array = [Item]()
         
         do {
             let array = try FileManager.default.subpathsOfDirectory(atPath: storagePath as String)
@@ -87,6 +87,21 @@ class DataProvider {
         return array
     }
     
+    func getLocalFolderContentAt(_ path: String) -> [String] {
+        
+        var tempArray = [String]()
+        
+        do {
+            tempArray = try FileManager.default.contentsOfDirectory(atPath: path)
+        } catch {
+            print("Error")
+        }
+        
+        print(tempArray)
+        
+        return tempArray
+    }
+    
     //MARK: Private Methods
     
     func isDirectory(_ path: String) -> Bool {
@@ -98,7 +113,7 @@ class DataProvider {
         let fileManager = FileManager.default
         
         if fileManager.fileExists(atPath: folderPath, isDirectory:&isDirectory) {
-            print(isDirectory.boolValue ? "File exists" : "Directory exists")
+            print(isDirectory.boolValue ? "Directory exists" : "File exists")
         } else {
             print("File does not exist")
         }

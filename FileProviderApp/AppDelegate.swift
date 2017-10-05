@@ -19,8 +19,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
+        let path = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!)
+        
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FolderViewController") as! FolderViewController
-        vc.itemsArray = DataProvider.sharedInstance.getFolderListFromRest()
+        vc.netItemsArray = DataProvider.sharedInstance.getFolderListFromRest()
+        vc.localItemsArray = DataProvider.sharedInstance.getLocalFolderContentAt(path)
+        vc.localPath = path
+        vc.controllerType = FolderType.rootFolder
         let navController = UINavigationController(rootViewController: vc)
         
         window?.rootViewController = navController
